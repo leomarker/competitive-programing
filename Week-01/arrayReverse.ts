@@ -30,7 +30,14 @@ function readLine(): string {
  * The function accepts INTEGER_ARRAY a as parameter.
  */
 
-function reverseArray(a: number[]): number[] {}
+function reverseArray(a: number[]): number[] {
+  let reverse: number[] = [];
+
+  for (let i = 0, x = a.length; i <= a.length, x > 0; i++, x--) {
+    reverse[i] = a[x - 1];
+  }
+  return reverse;
+}
 
 function main() {
   const ws: WriteStream = createWriteStream(process.env["OUTPUT_PATH"]);
