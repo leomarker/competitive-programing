@@ -26,18 +26,20 @@
  * The function accepts INTEGER n as parameter.
  */
 
-console.log(staircase(4));
+staircase(10);
 
 function staircase(n) {
-  for (let i = 0; i < n.length; i++) {
-    let space = n.length - 1;
-    let hashtag = n.length - space;
-    for (let space; space > 0; s--) {
-      console.log(" ");
+  for (let i = 1; i <= n; i++) {
+    let space = n - i;
+    let hashtag = n - space;
+    let string = "";
+    for (space; space > 0; space--) {
+      string = string + " ";
     }
     for (hashtag; hashtag > 0; hashtag--) {
-      console.log("#");
+      string = string + "#";
     }
+    console.log(string);
   }
 }
 
