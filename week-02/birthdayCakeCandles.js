@@ -28,8 +28,23 @@ function readLine() {
  * The function is expected to return an INTEGER.
  * The function accepts INTEGER_ARRAY candles as parameter.
  */
-
-function birthdayCakeCandles(candles) {}
+let candles = [3, 2, 1, 3];
+console.log(birthdayCakeCandles(candles));
+function birthdayCakeCandles(candles) {
+  let tallestCandle = 0;
+  let countTallestCandle = 0;
+  for (let i = 0; i < candles.length; i++) {
+    if (candles[i] > tallestCandle) {
+      tallestCandle = candles[i];
+    }
+  }
+  for (let i = 0; i < candles.length; i++) {
+    if (candles[i] === tallestCandle) {
+      countTallestCandle += 1;
+    }
+  }
+  return countTallestCandle;
+}
 
 function main() {
   const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
