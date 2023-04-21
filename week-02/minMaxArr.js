@@ -26,25 +26,26 @@ function readLine() {
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-let nums = [1, 2, 3, 4, 5];
-console.log(miniMaxSum(nums));
 function miniMaxSum(nums) {
-  let minSum = 0;
   let maxSum = 0;
+  let minSum = 0;
   for (let i = 0; i < nums.length; i++) {
     let slicedArrToSum = nums.filter((num) => num !== nums[i]);
     let sum = 0;
-    for (let j = 0; j < slicedArrToSum; j++) {
-      console.log((sum += slicedArrToSum[j]));
+    for (let j = 0; j < slicedArrToSum.length; j++) {
+      sum += slicedArrToSum[j];
     }
 
     if (sum >= maxSum) {
       maxSum = sum;
-    } else if (sum > 0) {
+      if (minSum === 0) {
+        minSum = sum;
+      }
+    } else if (sum > 0 && sum <= minSum) {
       minSum = sum;
     }
   }
-  return { maxSum, minSum };
+  console.log(minSum, maxSum);
 }
 
 function main() {
