@@ -28,7 +28,7 @@ function readLine() {
  * The function is expected to return a STRING.
  * The function accepts STRING s as parameter.
  */
-let twelveHourFormat = "06:40:03AM";
+let twelveHourFormat = "12:40:22AM";
 timeConversion(twelveHourFormat);
 function timeConversion(twelveHourFormat) {
   const [hours, minutes, secondModifier] = twelveHourFormat.split(":");
@@ -39,8 +39,9 @@ function timeConversion(twelveHourFormat) {
   if (modifier === "AM") {
     if (hours === "12") {
       hours24 = "00";
+    } else {
+      hours24 = hours;
     }
-    hours24 = hours;
   }
 
   if (modifier === "PM" && hours === "12") {
