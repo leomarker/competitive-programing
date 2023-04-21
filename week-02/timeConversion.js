@@ -23,40 +23,22 @@ function readLine() {
 }
 
 /*
- * Complete the 'birthdayCakeCandles' function below.
+ * Complete the 'timeConversion' function below.
  *
- * The function is expected to return an INTEGER.
- * The function accepts INTEGER_ARRAY candles as parameter.
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
  */
-let candles = [3, 2, 1, 3];
-console.log(birthdayCakeCandles(candles));
-function birthdayCakeCandles(candles) {
-  let tallestCandle = 0;
-  let countTallestCandle = 0;
-  for (let i = 0; i < candles.length; i++) {
-    if (candles[i] > tallestCandle) {
-      tallestCandle = candles[i];
-    }
-  }
-  for (let i = 0; i < candles.length; i++) {
-    if (candles[i] === tallestCandle) {
-      countTallestCandle += 1;
-    }
-  }
-  return countTallestCandle;
+
+function timeConversion(s) {
+  // Write your code here
 }
 
 function main() {
   const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
-  const candlesCount = parseInt(readLine().trim(), 10);
+  const s = readLine();
 
-  const candles = readLine()
-    .replace(/\s+$/g, "")
-    .split(" ")
-    .map((candlesTemp) => parseInt(candlesTemp, 10));
-
-  const result = birthdayCakeCandles(candles);
+  const result = timeConversion(s);
 
   ws.write(result + "\n");
 
