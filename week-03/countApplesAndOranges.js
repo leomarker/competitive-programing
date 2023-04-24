@@ -32,14 +32,40 @@ function readLine() {
  *  6. INTEGER_ARRAY oranges
  */
 
+countApplesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -6]);
+
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
   // Write your code here
-  let samHouseStartingPoint = s;
-  let smaHouserEndingPoint = t;
-  let applesTreeLocation = a;
-  let orangeTreeLocation = b;
-  let distanceOfApplesFalls = apples;
-  let distanceOfOrangesFalls = oranges;
+  let totalDistanceFromTheAppleTree = [];
+  let totalDistanceFromTheOrangeTree = [];
+  let applesThatFallOnHouse = 0;
+  let orangesThatFallOnHouse = 0;
+
+  for (let i = 0; i < apples.length; i++) {
+    totalDistanceFromTheAppleTree[i] = apples[i] + a;
+  }
+  for (let i = 0; i < oranges.length; i++) {
+    totalDistanceFromTheOrangeTree[i] = oranges[i] + b;
+  }
+
+  for (let i = 0; i < totalDistanceFromTheAppleTree.length; i++) {
+    if (
+      totalDistanceFromTheAppleTree[i] >= s &&
+      totalDistanceFromTheAppleTree[i] <= t
+    ) {
+      applesThatFallOnHouse += 1;
+    }
+  }
+  for (let i = 0; i < totalDistanceFromTheOrangeTree.length; i++) {
+    if (
+      totalDistanceFromTheOrangeTree[i] >= s &&
+      totalDistanceFromTheOrangeTree[i] <= t
+    ) {
+      orangesThatFallOnHouse += 1;
+    }
+  }
+
+  console.log(applesThatFallOnHouse, orangesThatFallOnHouse);
 }
 
 function main() {
