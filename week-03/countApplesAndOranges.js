@@ -34,6 +34,12 @@ function readLine() {
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
   // Write your code here
+  let samHouseStartingPoint = s;
+  let smaHouserEndingPoint = t;
+  let applesTreeLocation = a;
+  let orangeTreeLocation = b;
+  let distanceOfApplesFalls = apples;
+  let distanceOfOrangesFalls = oranges;
 }
 
 function main() {
