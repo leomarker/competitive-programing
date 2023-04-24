@@ -28,9 +28,25 @@ function readLine() {
  * The function is expected to return an INTEGER_ARRAY.
  * The function accepts INTEGER_ARRAY grades as parameter.
  */
-
+const grades = [73, 67, 38, 33];
+gradingStudents(grades);
 function gradingStudents(grades) {
   // Write your code here
+  let roundedGrades = [];
+  for (let i = 0; i < grades.length; i++) {
+    let round = Math.ceil(grades[i] / 5);
+
+    let nextMultipleOfFive = 5 * round;
+
+    let differenceBetweenMultipleAndGrade = nextMultipleOfFive - grades[i];
+
+    if (grades[i] < 38 || differenceBetweenMultipleAndGrade >= 3) {
+      roundedGrades[i] = grades[i];
+    } else {
+      roundedGrades[i] = nextMultipleOfFive;
+    }
+  }
+  return roundedGrades;
 }
 
 function main() {
